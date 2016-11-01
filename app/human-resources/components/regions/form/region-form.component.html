@@ -1,0 +1,34 @@
+<h2 >{{subHeader}}</h2>
+<div style="width: 40%;">
+    <form *ngIf="region" (ngSubmit)="onSubmit()" #regionAddForm="ngForm">
+        <div class="form-group">
+            <label for="regionId">Region Id</label>
+            <input type="text"
+                   class="form-control"
+                   id="regionId"
+                   required
+                   [(ngModel)]="region.region_id"
+                   name="regionId"
+                   #regionName="ngModel" >
+
+        </div>
+        <div class="form-group">
+            <label for="regionName">Region Name</label>
+            <input type="text"
+                   class="form-control"
+                   id="regionName"
+                   required
+                   [(ngModel)]="region.region_name"
+                   name="regionName"
+                   #regionName="ngModel" >
+
+        </div>
+
+        <button *ngIf="isCreate" type="button" class="btn btn-success" (click)="create()">Create</button>
+        <button *ngIf="isUpdate" type="button" class="btn btn-success" (click)="update()">Update</button>
+
+    </form>
+</div>
+
+
+

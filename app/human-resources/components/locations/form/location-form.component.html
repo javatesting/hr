@@ -1,0 +1,93 @@
+<h2 >{{subHeader}}</h2>
+<div style="width: 40%;">
+    <form *ngIf="location" (ngSubmit)="onSubmit()" #locationForm="ngForm">
+        <div class="form-group">
+            <label >LOCATION ID</label>
+            <input type="text"
+                   class="form-control"
+                   placeholder="location id (type number)"
+                   id="locationId"
+                   required
+                   [(ngModel)]="location.location_id"
+                   name="locationId"
+                   #locationId="ngModel" >
+
+        </div>
+        <div class="form-group">
+            <label>STREET ADDRESS</label>
+            <input type="text"
+                   class="form-control"
+                   placeholder="street address (type string)"
+                   id="streetAddress"
+                   required
+                   [(ngModel)]="location.street_address"
+                   name="streetAddress"
+                   #streetAddress="ngModel" >
+
+        </div>
+        <div class="form-group">
+            <label>POSTAL CODE</label>
+            <input type="text"
+                   class="form-control"
+                   placeholder="postal code (type string)"
+                   id="postalCode"
+                   required
+                   [(ngModel)]="location.postal_code"
+                   name="postalCode"
+                   #postalCode="ngModel" >
+
+        </div>
+        <div class="form-group">
+            <label>CITY</label>
+            <input type="text"
+                   class="form-control"
+                   placeholder="city (type string)"
+                   id="city"
+                   required
+                   [(ngModel)]="location.city"
+                   name="city"
+                   #city="ngModel" >
+
+        </div>
+        <div class="form-group">
+            <label>STATE PROVINCE</label>
+            <input type="text"
+                   class="form-control"
+                   placeholder="state province (type string)"
+                   id="stateProvince"
+                   required
+                   [(ngModel)]="location.state_province"
+                   name="stateProvince"
+                   #stateProvince="ngModel" >
+
+        </div>
+        <div class="form-group">
+            <label>COUNTRY ID</label>
+            <input type="text"
+                   class="form-control"
+                   placeholder="country id (type string)"
+                   id="countryId"
+                   required
+                   [(ngModel)]="location.country_id"
+                   name="countryId"
+                   #countryId="ngModel" >
+
+        </div>
+
+        <button *ngIf="isCreate" type="button" class="btn btn-success" (click)="create()">Create</button>
+        <button *ngIf="isUpdate" type="button" class="btn btn-success" (click)="update()">Update</button>
+
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

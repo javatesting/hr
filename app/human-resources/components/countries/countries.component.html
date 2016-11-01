@@ -1,0 +1,21 @@
+<h2 class="sub-header">{{subHeader}}</h2>
+<div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+       <tr>
+         <td >COUNTRY ID</td>
+         <td >COUNTRY NAME</td>
+         <td >REGION ID</td>
+       </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let countrie of countries" (click)="showDetails(countrie)">
+          <td >{{countrie.country_id}}</td>
+          <td >{{countrie.country_name}}</td>
+          <td >{{countrie.region_id}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+<create-button></create-button>

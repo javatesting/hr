@@ -1,0 +1,22 @@
+<h2>{{subHeader}}</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+      <thead>
+       <tr>
+         <td >DEPARTMENT ID</td>
+         <td >DEPARTMENT NAME</td>
+         <td >MANAGER ID</td>
+         <td >LOCATION ID</td>
+       </tr>
+      </thead>
+      <tbody></tbody>
+        <tr *ngFor="let department of departments" (dblclick)="gotoDetail(department)">
+          <td >{{department.department_id}}</td>
+          <td >{{department.department_name}}</td>
+          <td >{{department.manager_id}}</td>
+          <td >{{department.location_id}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+

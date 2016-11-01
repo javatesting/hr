@@ -1,0 +1,17 @@
+<h2 >{{titles}}</h2>
+<div *ngIf="region">
+    <table class="table" style="width: 30%;">
+        <tr>
+            <td>REGION ID</td>
+            <td>{{region.region_id}}</td>
+        </tr>
+        <tr>
+            <td>REGION NAME</td>
+            <td>{{region.region_name}}</td>
+        </tr>
+    </table>
+
+    <back-or-edit [id]="region.region_id" [linkTo]="linkTo" ></back-or-edit>
+</div>
+
+

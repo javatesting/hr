@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-md-11">
+        <h2 class="sub-header">{{subHeader}}  </h2>
+    </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped">
+      <thead>
+       <tr>
+         <td >ID</td>
+         <td >REGION NAME</td>
+       </tr>
+      </thead>
+    <tbody>
+      <tr *ngFor="let region of regions" (dblclick)="showDetail(region)">
+        <td >{{region.region_id}}</td>
+        <td >{{region.region_name}}</td>
+      </tr>
+    </tbody>
+    </table>
+</div>
+
+<create-button [link]="createNewRegion"></create-button>
+<!--<button  class="btn btn-danger btn-circle" style="position: fixed; bottom: 5%; right: 3%;"-->
+         <!--(click)="createForm()" > + </button>-->

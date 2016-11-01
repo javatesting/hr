@@ -1,0 +1,24 @@
+<h2 class="sub-header">{{subHeader}}</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+      <thead>
+       <tr>
+         <td >EMPLOYEE ID</td>
+         <td >START DATE</td>
+         <td >END DATE</td>
+         <td >JOB ID</td>
+         <td >DEPARTMENT ID</td>
+       </tr>
+      </thead>
+    <tbody>
+      <tr *ngFor="let history of historys">
+        <td >{{history.employee_id}}</td>
+        <td >{{history.start_date}}</td>
+        <td >{{history.end_date}}</td>
+        <td >{{history.job_id}}</td>
+        <td >{{history.department_id}}</td>
+      </tr>
+    </tbody>
+    </table>
+</div>
+

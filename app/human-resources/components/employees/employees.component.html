@@ -1,0 +1,21 @@
+<h2 class="sub-header">{{subHeader}}</h2>
+<div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <td >N</td>
+        <td >FIRST NAME</td>
+        <td >LAST NAME</td>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees; let nomer = index" (dblclick)="showDatail(employee.employee_id)">
+          <td >{{nomer + 1}}</td>
+          <td>{{employee.first_name}}</td>
+          <td>{{employee.last_name}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+

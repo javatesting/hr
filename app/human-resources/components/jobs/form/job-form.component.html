@@ -1,0 +1,72 @@
+<h2 >{{subHeader}}</h2>
+<div style="width: 40%;">
+    <form *ngIf="job" (ngSubmit)="onSubmit()" #jobForm="ngForm">
+        <div class="form-group">
+            <label >JOB ID</label>
+            <input type="text"
+                   class="form-control"
+                   placeholder="job id (type string)"
+                   id="jobId"
+                   required
+                   [(ngModel)]="job.job_id"
+                   name="jobId"
+                   #jobId="ngModel" >
+
+        </div>
+
+        <div class="form-group">
+            <label>JOB TITLE</label>
+            <input type="text"
+                   class="form-control"
+                   placeholder="job title (type string)"
+                   id="jobTitle"
+                   required
+                   [(ngModel)]="job.job_title"
+                   name="jobTitle"
+                   #jobTitle="ngModel" >
+
+        </div>
+
+        <div class="form-group">
+            <label>MIN SALARY</label>
+            <input type="text"
+                   class="form-control"
+                   placeholder="min salary (type number)"
+                   id="minSalary"
+                   required
+                   [(ngModel)]="job.min_salary"
+                   name="minSalary"
+                   #minSalary="ngModel" >
+
+        </div>
+
+        <div class="form-group">
+            <label>MAX SALARY</label>
+            <input type="text"
+                   class="form-control"
+                   placeholder="max salary (type number)"
+                   id="maxSalary"
+                   required
+                   [(ngModel)]="job.max_salary"
+                   name="maxSalary"
+                   #maxSalary="ngModel" >
+
+        </div>
+
+        <button *ngIf="isCreate" type="button" class="btn btn-success" (click)="create()">Create</button>
+        <button *ngIf="isUpdate" type="button" class="btn btn-success" (click)="update()">Update</button>
+
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

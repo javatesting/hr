@@ -1,0 +1,34 @@
+<h2 >{{subHeader}}</h2>
+<div *ngIf="location">
+
+    <table class="table" style="width: 30%;">
+        <tr>
+            <td>LOCATION ID</td>
+            <td>{{location.location_id}}</td>
+        </tr>
+        <tr>
+            <td>STREET ADDRESS</td>
+            <td>{{location.street_address}}</td>
+        </tr>
+        <tr>
+            <td>POSTAL CODE</td>
+            <td>{{location.postal_code}}</td>
+        </tr>
+        <tr>
+            <td>CITY</td>
+            <td>{{location.city}}</td>
+        </tr>
+        <tr>
+            <td>STATE PROVINCE</td>
+            <td>{{location.state_province}}</td>
+        </tr>
+        <tr>
+            <td>COUNTRY ID</td>
+            <td>{{location.country_id}}</td>
+        </tr>
+    </table>
+
+    <back-or-edit [id]="location.location_id" [linkTo]="linkTo" ></back-or-edit>
+</div>
+
+

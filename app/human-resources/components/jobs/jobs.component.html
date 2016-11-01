@@ -1,0 +1,23 @@
+<h2 class="sub-header">{{subHeader}}</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+      <thead>
+       <tr>
+         <td >JOB ID</td>
+         <td >JOB TITLE</td>
+         <td >MIN SALARY</td>
+         <td >MAX SALARY</td>
+       </tr>
+      </thead>
+    <tbody>
+      <tr *ngFor="let job of jobs" (click)="showDetails(job)">
+        <td >{{job.job_id}}</td>
+        <td >{{job.job_title}}</td>
+        <td >{{job.min_salary}}</td>
+        <td >{{job.max_salary}}</td>
+      </tr>
+    </tbody>
+    </table>
+</div>
+<create-button [link]="createNewJob"></create-button>
+

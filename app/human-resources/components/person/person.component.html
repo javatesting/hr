@@ -1,0 +1,23 @@
+<h2 class="sub-header">{{subHeader}}</h2>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td >ID</td>
+            <td >NAME</td>
+            <td >LAST NAME</td>
+            <td >AGE</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let person of persons" (dblclick)="showDetails(person)">
+            <td >{{person.person_id}}</td>
+            <td >{{person.name}}</td>
+            <td >{{person.last_name}}</td>
+            <td >{{person.age}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<create-button [link]="createNewPerson"></create-button>
+

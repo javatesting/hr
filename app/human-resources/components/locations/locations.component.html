@@ -1,0 +1,27 @@
+<h2 class="sub-header">{{subHeader}}</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+      <thead>
+       <tr>
+         <td >ID</td>
+         <td >STREET ADDRESS</td>
+         <td >POSTAL CODE</td>
+         <td >CITY</td>
+         <td >STATE PROVINCE</td>
+         <td >COUNTRY ID</td>
+       </tr>
+      </thead>
+    <tbody>
+      <tr *ngFor="let location of locations" (dblclick)="showDetails(location)">
+        <td >{{location.location_id}}</td>
+        <td >{{location.street_address}}</td>
+        <td >{{location.postal_code}}</td>
+        <td >{{location.city}}</td>
+        <td >{{location.state_province}}</td>
+        <td >{{location.country_id}}</td>
+      </tr>
+    </tbody>
+    </table>
+</div>
+<create-button [link]="createNewLocation"></create-button>
+

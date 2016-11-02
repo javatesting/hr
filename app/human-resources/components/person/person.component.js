@@ -14,6 +14,7 @@ var PersonComponent = (function () {
     function PersonComponent(personService) {
         this.personService = personService;
         this.subHeader = 'Persons';
+        this.createNewPerson = 'person/add/form';
     }
     PersonComponent.prototype.ngOnInit = function () {
         var _this = this;

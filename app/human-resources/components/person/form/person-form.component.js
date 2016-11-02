@@ -9,8 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var forms_1 = require("@angular/forms");
 var PersonFormComponent = (function () {
     function PersonFormComponent() {
+        this.registerForm = new forms_1.FormGroup({
+            name: new forms_1.FormControl(),
+            last_name: new forms_1.FormControl(),
+            age: new forms_1.FormControl()
+        });
     }
     PersonFormComponent.prototype.ngOnInit = function () {
     };

@@ -12,6 +12,7 @@ export class PersonComponent implements OnInit{
 
     subHeader = 'Persons';
     persons : Person[];
+    createNewPerson = 'person/add/form';
     
     constructor(private personService: PersonService) {}
     

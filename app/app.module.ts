@@ -20,7 +20,8 @@ import {RegionsComponent, LocationsComponent, JobsComponent, HistoryComponent,
         EmployeeDetailComponent, DepartmentDetailComponent, RegionDetailComponent,
         JobDetailComponent,CountrieDetailComponent,RegionFormComponent,
         CreateButtonComponent, LocationDetailComponent, LocationFormComponent,
-        JobFormComponent, BackOrEditComponent,PersonComponent
+        JobFormComponent, BackOrEditComponent,
+        PersonComponent, PersonDetailComponent, PersonFormComponent
   } from './human-resources/components/index';
 
 
@@ -33,27 +34,18 @@ import {RegionsComponent, LocationsComponent, JobsComponent, HistoryComponent,
   ],
   declarations: [
     AppComponent,
-    EmployeesComponent,
-    EmployeeDetailComponent,
-    CountriesComponent,
-    CountrieDetailComponent,
-    DepartmentsComponent,
-    DepartmentDetailComponent,
-    JobsComponent,
-    JobFormComponent,
-    JobDetailComponent,
+    EmployeesComponent, EmployeeDetailComponent,
+    CountriesComponent, CountrieDetailComponent,
+    DepartmentsComponent, DepartmentDetailComponent,
+    JobsComponent, JobFormComponent, JobDetailComponent,
     HistoryComponent,
-    RegionsComponent,
-    RegionDetailComponent,
-    RegionFormComponent,
-    LocationsComponent,
-    LocationDetailComponent,
-    LocationFormComponent,
+    RegionsComponent, RegionDetailComponent, RegionFormComponent,
+    LocationsComponent, LocationDetailComponent, LocationFormComponent,
     SidebarComponent,
     TopNavbarComponent,
     CreateButtonComponent,
     BackOrEditComponent,
-    PersonComponent
+    PersonComponent, PersonDetailComponent , PersonFormComponent
   ],
   providers: [
     EmployeesService,

@@ -1,12 +1,15 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import {RegionsComponent, LocationsComponent, JobsComponent, HistoryComponent,
-    EmployeesComponent, DepartmentsComponent, CountriesComponent,
-    EmployeeDetailComponent,DepartmentDetailComponent,RegionDetailComponent,
-    JobDetailComponent,CountrieDetailComponent, RegionFormComponent,
-    LocationDetailComponent,LocationFormComponent,JobFormComponent,
-    PersonComponent
+import {
+    RegionsComponent, RegionDetailComponent, RegionFormComponent,
+    LocationsComponent, LocationDetailComponent, LocationFormComponent,
+    JobsComponent, JobDetailComponent, JobFormComponent,
+    HistoryComponent,
+    EmployeesComponent, EmployeeDetailComponent,
+    DepartmentsComponent, DepartmentDetailComponent,
+    CountriesComponent, CountrieDetailComponent,
+    PersonComponent, PersonDetailComponent, PersonFormComponent
 } from './human-resources/components/index';
 
 const appRoutes: Routes = [
@@ -74,6 +77,15 @@ const appRoutes: Routes = [
   },
   {
     path: 'persons', component: PersonComponent
+  },
+  {
+    path: 'person/:person_id', component: PersonDetailComponent
+  },
+  {
+    path: 'person/add/form', component: PersonFormComponent
+  },
+  {
+    path: 'person/edit/form', component: PersonFormComponent
   }
 ];
 

@@ -36,3 +36,5 @@ export * from './helpers/back-or-edit.component';
 
 export * from './person/person.component';
 export * from './person/person.service';
+export * from './person/detail/person-detail.component';
+export * from './person/form/person-form.component';

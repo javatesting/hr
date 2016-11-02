@@ -29,4 +29,6 @@ __export(require('./helpers/create-button.component'));
 __export(require('./helpers/back-or-edit.component'));
 __export(require('./person/person.component'));
 __export(require('./person/person.service'));
+__export(require('./person/detail/person-detail.component'));
+__export(require('./person/form/person-form.component'));
 //# sourceMappingURL=index.js.map

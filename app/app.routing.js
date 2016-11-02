@@ -66,6 +66,15 @@ var appRoutes = [
     },
     {
         path: 'persons', component: index_1.PersonComponent
+    },
+    {
+        path: 'person/:person_id', component: index_1.PersonDetailComponent
+    },
+    {
+        path: 'person/add/form', component: index_1.PersonFormComponent
+    },
+    {
+        path: 'person/edit/form', component: index_1.PersonFormComponent
     }
 ];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);

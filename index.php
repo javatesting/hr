@@ -23,6 +23,8 @@ $router -> get('/department/(\\d+)', 'Departments@getDepartment');
 
 $router -> get('/jobs', 'Jobs@getJobs');
 $router -> get('/job/(\\w+)', 'Jobs@getJob');
+$router -> post('/job/add', 'Jobs@addJob');
+$router -> post('/job/update', 'Jobs@updateJob');
 
 
 $router -> get('/locations', 'Locations@getLocations');
@@ -38,6 +40,8 @@ $router -> post('/region/add', function (){
 });
 
 $router -> get('/history', 'History@getHistory');
+$router -> get('/persons', 'Person@getPersons');
+
 
 $router->run();
 

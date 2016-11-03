@@ -8,7 +8,7 @@ import {
     HistoryComponent,
     EmployeesComponent, EmployeeDetailComponent,
     DepartmentsComponent, DepartmentDetailComponent,
-    CountriesComponent, CountrieDetailComponent,
+    CountriesComponent, CountrieDetailComponent, CountrieFormComponent,
     PersonComponent, PersonDetailComponent, PersonFormComponent
 } from './human-resources/components/index';
 
@@ -29,6 +29,12 @@ const appRoutes: Routes = [
   },
   {
     path: 'country/:country_id', component: CountrieDetailComponent
+  },
+  {
+    path: 'countrie/add/form', component: CountrieFormComponent
+  },
+  {
+    path: 'countrie/edit/form', component: CountrieFormComponent
   },
   {
     path: 'departments', component: DepartmentsComponent

@@ -29,6 +29,20 @@ var CountriesService = (function () {
             .get(this.url.getURL() + 'countrie' + '/' + id)
             .map(function (res) { return res.json(); });
     };
+    CountriesService.prototype.create = function (countrie) {
+        var body = JSON.stringify(countrie);
+        var options = new http_1.RequestOptions({ method: http_1.RequestMethod.Post });
+        return this.http
+            .post(this.url.getURL() + 'countrie/add', body, options)
+            .map(function (res) { return res.json(); });
+    };
+    CountriesService.prototype.update = function (countrie) {
+        var body = JSON.stringify(countrie);
+        var options = new http_1.RequestOptions({ method: http_1.RequestMethod.Post });
+        return this.http
+            .post(this.url.getURL() + 'countrie/update', body, options)
+            .map(function (res) { return res.json(); });
+    };
     CountriesService.prototype.handleError = function (error) {
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);

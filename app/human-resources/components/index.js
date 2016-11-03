@@ -23,6 +23,7 @@ __export(require('./departments/departments.service'));
 __export(require('./countries/countries.component'));
 __export(require('./countries/countries.service'));
 __export(require('./countries/detail/countrie-detail.component'));
+__export(require('./countries/form/countrie-form.component'));
 __export(require('./employees/detail/employee-detail.component'));
 __export(require('./departments/detail/departament-detail.component'));
 __export(require('./helpers/create-button.component'));

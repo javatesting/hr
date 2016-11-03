@@ -15,7 +15,9 @@ export class PersonComponent implements OnInit{
     persons : Person[];
     createNewPerson = 'person/add/form';
     
-    constructor(private personService: PersonService, private router: Router) {}
+    constructor(private personService: PersonService, private router: Router) {
+
+    }
     
     ngOnInit(): void {
         this.personService

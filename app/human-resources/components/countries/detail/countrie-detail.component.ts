@@ -14,6 +14,7 @@ export class CountrieDetailComponent implements OnInit{
   subHeader = "Countrie Details";
   countries: Countries[];
   countrie: Countries;
+  linkTo = 'countrie/edit/form';
   
   constructor(
       private countrieService: CountriesService,

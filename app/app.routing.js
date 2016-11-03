@@ -20,6 +20,12 @@ var appRoutes = [
         path: 'country/:country_id', component: index_1.CountrieDetailComponent
     },
     {
+        path: 'countrie/add/form', component: index_1.CountrieFormComponent
+    },
+    {
+        path: 'countrie/edit/form', component: index_1.CountrieFormComponent
+    },
+    {
         path: 'departments', component: index_1.DepartmentsComponent
     },
     {

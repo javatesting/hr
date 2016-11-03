@@ -1,0 +1,25 @@
+<div style="width: 20%;">
+    <form [formGroup]="registerForm" (ngSubmit)="save(registerForm.value)">
+        <div class="form-group">
+            <label>COUNTRY ID</label>
+            <input formControlName="country_id"
+                   class="form-control"
+                   placeholder="country id (type string)">
+        </div>
+        <div class="form-group">
+            <label>COUNTRY NAME</label>
+            <input formControlName="country_name"
+                   class="form-control"
+                   placeholder="country name (type string)">
+        </div>
+        <div class="form-group">
+            <label>REGION ID</label>
+            <input formControlName="region_id"
+                   class="form-control"
+                   placeholder="region id (type string)">
+        </div>
+        <button *ngIf="isCreate" type="submit" class="btn btn-success">Create</button>
+        <button *ngIf="isUpdate" type="submit" class="btn btn-success">Update</button>
+    </form>
+
+</div>

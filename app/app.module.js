@@ -35,7 +35,7 @@ var AppModule = (function () {
             declarations: [
                 root_component_1.AppComponent,
                 index_2.EmployeesComponent, index_2.EmployeeDetailComponent,
-                index_2.CountriesComponent, index_2.CountrieDetailComponent,
+                index_2.CountriesComponent, index_2.CountrieDetailComponent, index_2.CountrieFormComponent,
                 index_2.DepartmentsComponent, index_2.DepartmentDetailComponent,
                 index_2.JobsComponent, index_2.JobFormComponent, index_2.JobDetailComponent,
                 index_2.HistoryComponent,

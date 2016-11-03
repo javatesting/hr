@@ -27,6 +27,7 @@ export * from './departments/departments.service';
 export * from './countries/countries.component';
 export * from './countries/countries.service';
 export * from './countries/detail/countrie-detail.component';
+export * from './countries/form/countrie-form.component';
 
 export * from './employees/detail/employee-detail.component';
 export * from './departments/detail/departament-detail.component';

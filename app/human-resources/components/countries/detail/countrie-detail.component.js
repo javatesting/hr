@@ -19,6 +19,7 @@ var CountrieDetailComponent = (function () {
         this.activatedRoute = activatedRoute;
         this.url = url;
         this.subHeader = "Countrie Details";
+        this.linkTo = 'countrie/edit/form';
     }
     CountrieDetailComponent.prototype.ngOnInit = function () {
         this.displayCountrie();

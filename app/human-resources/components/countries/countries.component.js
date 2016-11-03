@@ -16,6 +16,7 @@ var CountriesComponent = (function () {
         this.countriesService = countriesService;
         this.router = router;
         this.subHeader = "Countries";
+        this.createNewCountrie = 'countrie/add/form';
         this.getCountries();
     }
     CountriesComponent.prototype.getCountries = function () {

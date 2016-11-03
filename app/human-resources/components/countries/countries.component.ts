@@ -11,7 +11,7 @@ import {CountriesService} from "./countries.service";
 export class CountriesComponent{
   subHeader = "Countries";
   countries: Countries[];
-  
+  createNewCountrie = 'countrie/add/form';
   constructor(
       private countriesService: CountriesService, private router: Router) {
     this.getCountries();

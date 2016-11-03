@@ -16,22 +16,34 @@ var router_1 = require("@angular/router");
 var url_1 = require("../../../../url");
 var http_1 = require("@angular/http");
 var PersonFormComponent = (function () {
-    function PersonFormComponent(personService, router, activatedRoute, url, http) {
+    function PersonFormComponent(personService, router, activatedRoute, url, http, formBuilder) {
         this.personService = personService;
         this.router = router;
         this.activatedRoute = activatedRoute;
         this.url = url;
         this.http = http;
+        this.formBuilder = formBuilder;
     }
     PersonFormComponent.prototype.ngOnInit = function () {
         this.initForm();
         this.createOrUpdateFormInit();
     };
+    PersonFormComponent.prototype.save = function (person) {
+        //this.person = person;
+        this.initPerson(person);
+        this.create();
+    };
+    PersonFormComponent.prototype.initPerson = function (person) {
+        this.person.name = person.name;
+        this.person.last_name = person.last_name;
+        this.person.age = person.age;
+    };
     PersonFormComponent.prototype.initForm = function () {
-        this.registerForm = new forms_1.FormGroup({
-            name: new forms_1.FormControl(),
-            last_name: new forms_1.FormControl(),
-            age: new forms_1.FormControl()
+        this.registerForm = this.formBuilder.group({
+            person_id: '',
+            name: '',
+            last_name: '',
+            age: '10'
         });
     };
     PersonFormComponent.prototype.create = function () {
@@ -71,7 +83,7 @@ var PersonFormComponent = (function () {
             selector: 'person-form',
             templateUrl: 'person-form.component.html'
         }), 
-        __metadata('design:paramtypes', [person_service_1.PersonService, router_1.Router, router_1.ActivatedRoute, url_1.Url, http_1.Http])
+        __metadata('design:paramtypes', [person_service_1.PersonService, router_1.Router, router_1.ActivatedRoute, url_1.Url, http_1.Http, forms_1.FormBuilder])
     ], PersonFormComponent);
     return PersonFormComponent;
 }());

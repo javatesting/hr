@@ -1,5 +1,7 @@
 <div style="width: 20%;">
-    <form [formGroup]="registerForm">
+    <form [formGroup]="registerForm" (ngSubmit)="save(registerForm.value)">
+        <input formControlName="person_id" type="hidden"/>
+
         <div class="form-group">
             <label>Name</label>
             <input formControlName="name"
@@ -18,7 +20,7 @@
                    class="form-control"
                    placeholder="Age">
         </div>
+        <button *ngIf="isCreate" type="submit" class="btn btn-success">Create</button>
     </form>
-    <button *ngIf="isCreate" type="button" class="btn btn-success" (click)="create()">Create</button>
-    <button *ngIf="isUpdate" type="button" class="btn btn-success" (click)="update()">Update</button>
+
 </div>

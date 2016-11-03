@@ -24,7 +24,8 @@ export class PersonFormComponent implements OnInit{
                  private router: Router,
                  private activatedRoute: ActivatedRoute,
                  private url: Url,
-                 private http: Http){
+                 private http: Http,
+                 private formBuilder: FormBuilder){
         
     }
     
@@ -33,12 +34,26 @@ export class PersonFormComponent implements OnInit{
         this.createOrUpdateFormInit();
 
     }
-    
+
+
+    save(person: Person): void {
+        //this.person = person;
+        this.initPerson(person);
+        this.create();
+    }
+
+    initPerson(person: Person): void{
+        this.person.name = person.name;
+        this.person.last_name = person.last_name;
+        this.person.age = person.age;
+    }
+
     initForm(): void {
-        this.registerForm = new FormGroup({
-            name: new FormControl(),
-            last_name: new FormControl(),
-            age: new FormControl()
+        this.registerForm = this.formBuilder.group({
+            person_id: '',
+            name: '',
+            last_name: '',
+            age: '10'
         });
     }
 
@@ -55,7 +70,9 @@ export class PersonFormComponent implements OnInit{
             .subscribe(data => console.log(data));
         this.refresh();
     }
-    
+
+
+
     private refresh(): void {
         this.http
             .get(this.url.getURL() + 'persons')

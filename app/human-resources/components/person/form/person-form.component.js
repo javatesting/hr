@@ -10,15 +10,60 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
+var person_service_1 = require("../person.service");
+var person_1 = require("../person");
+var router_1 = require("@angular/router");
+var url_1 = require("../../../../url");
+var http_1 = require("@angular/http");
 var PersonFormComponent = (function () {
-    function PersonFormComponent() {
+    function PersonFormComponent(personService, router, activatedRoute, url, http) {
+        this.personService = personService;
+        this.router = router;
+        this.activatedRoute = activatedRoute;
+        this.url = url;
+        this.http = http;
+    }
+    PersonFormComponent.prototype.ngOnInit = function () {
+        this.initForm();
+        this.createOrUpdateFormInit();
+    };
+    PersonFormComponent.prototype.initForm = function () {
         this.registerForm = new forms_1.FormGroup({
             name: new forms_1.FormControl(),
             last_name: new forms_1.FormControl(),
             age: new forms_1.FormControl()
         });
-    }
-    PersonFormComponent.prototype.ngOnInit = function () {
+    };
+    PersonFormComponent.prototype.create = function () {
+        this.personService
+            .create(this.person)
+            .subscribe(function (data) { return console.log(data); });
+        this.refresh();
+    };
+    PersonFormComponent.prototype.update = function () {
+        this.personService
+            .update(this.person)
+            .subscribe(function (data) { return console.log(data); });
+        this.refresh();
+    };
+    PersonFormComponent.prototype.refresh = function () {
+        this.http
+            .get(this.url.getURL() + 'persons')
+            .map(function (res) { return res.json(); })
+            .subscribe(function (data) { return console.log(data); });
+        this.router.navigate(['/persons']);
+    };
+    PersonFormComponent.prototype.createOrUpdateFormInit = function () {
+        var _this = this;
+        var id = this.url.getParameter('id', this.activatedRoute);
+        if (id === undefined || id === null) {
+            this.person = new person_1.Person();
+            this.isCreate = true;
+        }
+        else {
+            this.isUpdate = true;
+            this.personService.getPerson(id).subscribe(function (data) { return _this.person = data[0]; });
+        }
     };
     PersonFormComponent = __decorate([
         core_1.Component({
@@ -26,7 +71,7 @@ var PersonFormComponent = (function () {
             selector: 'person-form',
             templateUrl: 'person-form.component.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [person_service_1.PersonService, router_1.Router, router_1.ActivatedRoute, url_1.Url, http_1.Http])
     ], PersonFormComponent);
     return PersonFormComponent;
 }());

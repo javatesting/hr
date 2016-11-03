@@ -19,5 +19,6 @@
                    placeholder="Age">
         </div>
     </form>
-    <button  type="button" class="btn btn-success" (click)="create()">Create</button>
+    <button *ngIf="isCreate" type="button" class="btn btn-success" (click)="create()">Create</button>
+    <button *ngIf="isUpdate" type="button" class="btn btn-success" (click)="update()">Update</button>
 </div>

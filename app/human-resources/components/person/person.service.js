@@ -21,6 +21,25 @@ var PersonService = (function () {
             .get(this.url.getURL() + 'persons')
             .map(function (res) { return res.json(); });
     };
+    PersonService.prototype.getPerson = function (id) {
+        return this.http
+            .get(this.url.getURL() + 'person' + '/' + id)
+            .map(function (res) { return res.json(); });
+    };
+    PersonService.prototype.create = function (person) {
+        var body = JSON.stringify(person);
+        var options = new http_1.RequestOptions({ method: http_1.RequestMethod.Post });
+        return this.http
+            .post(this.url.getURL() + 'person/add', body, options)
+            .map(function (res) { return res.json(); });
+    };
+    PersonService.prototype.update = function (person) {
+        var body = JSON.stringify(person);
+        var options = new http_1.RequestOptions({ method: http_1.RequestMethod.Post });
+        return this.http
+            .post(this.url.getURL() + 'person/update', body, options)
+            .map(function (res) { return res.json(); });
+    };
     PersonService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http, url_1.Url])

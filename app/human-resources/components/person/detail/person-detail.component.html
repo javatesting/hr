@@ -1,0 +1,26 @@
+<h2 >{{subHeader}}</h2>
+<div *ngIf="person">
+
+    <table class="table" style="width: 30%;">
+        <tr>
+            <td>Person Id</td>
+            <td>{{person.person_id}}</td>
+        </tr>
+        <tr>
+            <td>Name :</td>
+            <td>{{person.name}}</td>
+        </tr>
+        <tr>
+            <td>Last name :</td>
+            <td>{{person.last_name}}</td>
+        </tr>
+        <tr>
+            <td>Age :</td>
+            <td>{{person.age}}</td>
+        </tr>
+    </table>
+
+    <back-or-edit [id]="person.person_id" [linkTo]="linkTo" ></back-or-edit>
+</div>
+
+

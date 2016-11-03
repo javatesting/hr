@@ -40,8 +40,11 @@ $router -> post('/region/add', function (){
 });
 
 $router -> get('/history', 'History@getHistory');
-$router -> get('/persons', 'Person@getPersons');
 
+$router -> get('/persons', 'Person@getPersons');
+$router -> get('/person/(\\d+)', 'Person@getPerson');
+$router -> get('/person/add', 'Person@addPerson');
+$router -> get('/person/update', 'Person@updatePerson');
 
 $router->run();
 

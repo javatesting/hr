@@ -10,9 +10,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var person_service_1 = require("./person.service");
+var router_1 = require("@angular/router");
 var PersonComponent = (function () {
-    function PersonComponent(personService) {
+    function PersonComponent(personService, router) {
         this.personService = personService;
+        this.router = router;
         this.subHeader = 'Persons';
         this.createNewPerson = 'person/add/form';
     }
@@ -22,13 +24,16 @@ var PersonComponent = (function () {
             .getPersons()
             .subscribe(function (data) { return _this.persons = data; });
     };
+    PersonComponent.prototype.showDetails = function (person) {
+        this.router.navigate(['/person', person.person_id]);
+    };
     PersonComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'person',
             templateUrl: 'person.component.html'
         }), 
-        __metadata('design:paramtypes', [person_service_1.PersonService])
+        __metadata('design:paramtypes', [person_service_1.PersonService, router_1.Router])
     ], PersonComponent);
     return PersonComponent;
 }());

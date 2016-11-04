@@ -5,6 +5,7 @@ import {LocationsService} from "../locations.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Url} from "../../../../url";
 import { Location }               from '@angular/common';
+import {BaseService} from "../../../shared/index";
 
 @Component({
     moduleId: module.id,
@@ -17,20 +18,23 @@ export class LocationDetailComponent implements OnInit{
     location: Locations;
 
     linkTo = '/location/edit/form';
+    service: BaseService;
+
     constructor(
                 private locationsService: LocationsService,
                 private activatedRoute: ActivatedRoute,
-                private url: Url,
-                private router: Router, 
-                private locationBack: Location) {
-        
+                private url: Url) {
+        this.service = locationsService;
     }
     
     ngOnInit(): void {
         let id = this.url.getParameter('location_id', this.activatedRoute);
-        this.locationsService
-            .getLocation(id)
-            .subscribe(data => this.location = data[0]);
+        this.service
+           .getEntityById(id)
+           .subscribe(data => this.location = data[0]);
+        // this.locationsService
+        //     .getLocation(id)
+        //     .subscribe(data => this.location = data[0]);
     }
 
 }

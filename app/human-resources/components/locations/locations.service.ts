@@ -3,12 +3,25 @@ import {Headers, Http, Response, RequestOptions, RequestMethod} from '@angular/h
 import {Locations} from "./locations";
 import 'rxjs/add/operator/toPromise';
 import {Url} from "../../../url";
+import {BaseService} from '../../shared/index';
 
 @Injectable()
-export class LocationsService {
+export class LocationsService implements BaseService{
 
+  locations: Locations[];
+  
   constructor(private http: Http, public url: Url) { }
 
+  getAllEntity() {
+     this.getLocations();
+     return this.locations;
+  }
+  
+  getEntityById(id: string) {
+    return this.getLocation(id);
+  }
+  
+  
   getLocations() {
     return this.http.get(this.url.getURL() + 'locations')
         .toPromise()
@@ -16,9 +29,12 @@ export class LocationsService {
         .catch(this.handleError);
   }
 
+  
   // getLocations() {
-  //   return this.http.get(this.url.getURL() + 'locations')
-  //       .map(res => <Locations[]> res.json());
+  //     this.http
+  //       .get(this.url.getURL() + 'locations')
+  //       .map(res => <Locations[]> res.json())
+  //       .subscribe(data => this.locations = data);
   // }
   
   getLocation(id: string) {

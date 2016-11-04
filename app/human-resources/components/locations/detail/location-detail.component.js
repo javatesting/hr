@@ -12,23 +12,24 @@ var core_1 = require("@angular/core");
 var locations_service_1 = require("../locations.service");
 var router_1 = require("@angular/router");
 var url_1 = require("../../../../url");
-var common_1 = require('@angular/common');
 var LocationDetailComponent = (function () {
-    function LocationDetailComponent(locationsService, activatedRoute, url, router, locationBack) {
+    function LocationDetailComponent(locationsService, activatedRoute, url) {
         this.locationsService = locationsService;
         this.activatedRoute = activatedRoute;
         this.url = url;
-        this.router = router;
-        this.locationBack = locationBack;
         this.subHeader = "Location Details";
         this.linkTo = '/location/edit/form';
+        this.service = locationsService;
     }
     LocationDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         var id = this.url.getParameter('location_id', this.activatedRoute);
-        this.locationsService
-            .getLocation(id)
+        this.service
+            .getEntityById(id)
             .subscribe(function (data) { return _this.location = data[0]; });
+        // this.locationsService
+        //     .getLocation(id)
+        //     .subscribe(data => this.location = data[0]);
     };
     LocationDetailComponent = __decorate([
         core_1.Component({
@@ -36,7 +37,7 @@ var LocationDetailComponent = (function () {
             selector: 'location-detail',
             templateUrl: 'location-detail.component.html'
         }), 
-        __metadata('design:paramtypes', [locations_service_1.LocationsService, router_1.ActivatedRoute, url_1.Url, router_1.Router, common_1.Location])
+        __metadata('design:paramtypes', [locations_service_1.LocationsService, router_1.ActivatedRoute, url_1.Url])
     ], LocationDetailComponent);
     return LocationDetailComponent;
 }());

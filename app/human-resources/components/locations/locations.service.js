@@ -17,6 +17,13 @@ var LocationsService = (function () {
         this.http = http;
         this.url = url;
     }
+    LocationsService.prototype.getAllEntity = function () {
+        this.getLocations();
+        return this.locations;
+    };
+    LocationsService.prototype.getEntityById = function (id) {
+        return this.getLocation(id);
+    };
     LocationsService.prototype.getLocations = function () {
         return this.http.get(this.url.getURL() + 'locations')
             .toPromise()
@@ -24,8 +31,10 @@ var LocationsService = (function () {
             .catch(this.handleError);
     };
     // getLocations() {
-    //   return this.http.get(this.url.getURL() + 'locations')
-    //       .map(res => <Locations[]> res.json());
+    //     this.http
+    //       .get(this.url.getURL() + 'locations')
+    //       .map(res => <Locations[]> res.json())
+    //       .subscribe(data => this.locations = data);
     // }
     LocationsService.prototype.getLocation = function (id) {
         return this.http

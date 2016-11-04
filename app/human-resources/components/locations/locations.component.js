@@ -18,7 +18,11 @@ var LocationsComponent = (function () {
         this.subHeader = "Locations";
         this.createNewLocation = 'location/add/form';
         this.getLocations();
+        this.service = locationsService;
     }
+    LocationsComponent.prototype.ngOnInit = function () {
+        // this.locations = this.service.getAllEntity();
+    };
     LocationsComponent.prototype.getLocations = function () {
         var _this = this;
         this.locationsService.getLocations()
